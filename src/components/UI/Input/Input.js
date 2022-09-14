@@ -5,7 +5,7 @@ export default function Input(props) {
 
   return (
     <input 
-    className={`${styles.input} ${props.className}`} 
+    className={`${styles.input} ${props.className || '' }`} 
     type={props.type} 
     autoFocus={props.autoFocus || false} />
   )
