@@ -7,6 +7,8 @@ export default function Input(props) {
     <input 
     className={`${styles.input} ${props.className || '' }`} 
     type={props.type} 
-    autoFocus={props.autoFocus || false} />
+    onChange={props.onChange}
+    autoFocus={props.autoFocus || false}
+    value={props.value} />
   )
 }
