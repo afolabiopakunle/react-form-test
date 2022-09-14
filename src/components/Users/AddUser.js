@@ -4,7 +4,7 @@ import Input from '../UI/Input/Input';
 import Card from '../UI/Card';
 import styles from './AddUser.module.css';
 
-export default function AddUser() {
+export default function AddUser(props) {
 
   const [enteredAge, setEnteredAge] = useState('');
   const [enteredUsername, setEnteredUserName] = useState('');
@@ -15,11 +15,12 @@ export default function AddUser() {
       alert(null)
     } else if(enteredUsername.trim().length === 0) {
       alert('Are you serious? Give us a username')
+      props.onAddUser(enteredUsername, enteredAge)
     }
-    console.log(enteredUsername, enteredAge)
-    setEnteredAge('');
+    // console.log(enteredUsername, enteredAge)
+    // setEnteredAge('');
 
-    setEnteredUserName('')
+    // setEnteredUserName('')
   }
 
   const usernameChangeHandler = (event) => {
@@ -30,8 +31,6 @@ export default function AddUser() {
       setEnteredAge(event.target.value);
   }
 
-  function submitHandler() {
-  }
 
   return (
     <Card className={styles.input}>
@@ -42,11 +41,8 @@ export default function AddUser() {
       <label htmlFor="age">Age (Years)</label>
       <Input value={enteredAge} type={'number'} onChange={ageChangeHandler} />
       {/* <button type="submit">Add User</button> */}
-      <Button type={'submit'} onClick={submitHandler}>Add User</Button>
+      <Button type={'submit'}>Add User</Button>
     </form>
-    <div>
-      {}
-    </div>
     </Card>
 
   
