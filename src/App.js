@@ -16,7 +16,7 @@ export default function App() {
   return (
     <div>
      <AddUser onAddUser={getUser} />
-     <UsersList users={usersList} />
+     {usersList.length !== 0 && <UsersList users={usersList} />}
     </div>
   );
 }
