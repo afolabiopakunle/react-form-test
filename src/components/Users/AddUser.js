@@ -13,14 +13,17 @@ export default function AddUser(props) {
     event.preventDefault();
     if(enteredAge.length <= 0) {
       alert(null)
+      return
     } else if(enteredUsername.trim().length === 0) {
       alert('Are you serious? Give us a username')
-      props.onAddUser(enteredUsername, enteredAge)
+      return
     }
-    // console.log(enteredUsername, enteredAge)
-    // setEnteredAge('');
 
-    // setEnteredUserName('')
+    props.onAddUser(enteredUsername, enteredAge)
+
+    setEnteredAge('');
+
+    setEnteredUserName('')
   }
 
   const usernameChangeHandler = (event) => {

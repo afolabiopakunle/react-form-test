@@ -8,7 +8,7 @@ export default function App() {
 
   const [usersList, setUsers] = useState([])
   const getUser = (uName, uAge) => {
-    console.log(data)
+    // console.log(data)
     setUsers((prevUsers) => [{name: uName, age: uAge}, ...prevUsers])
     console.log(usersList)
   }
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <div>
      <AddUser onAddUser={getUser} />
-     <UsersList users={[]} />
+     <UsersList users={usersList} />
     </div>
   );
 }
