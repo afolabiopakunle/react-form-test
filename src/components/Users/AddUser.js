@@ -1,18 +1,22 @@
 import React from 'react';
-import Card from '../UI/Card'
+import Button from '../UI/Button/Button';
+import Card from '../UI/Card';
+import styles from './AddUser.module.css';
+
 export default function AddUser() {
 
   const addUserHandler = (event) => {
     event.preventDefault();
   }
   return (
-    <Card>
+    <Card className={styles.input}>
     <form onSubmit={addUserHandler}>
       <label htmlFor="username">Username</label>
       <input type="text" id='username' />
       <label htmlFor="age">Age (Years)</label>
       <input type="number" id="age"/>
-      <button type="submit">Add User</button>
+      {/* <button type="submit">Add User</button> */}
+      <Button type={'submit'}>Add User</Button>
     </form>
     </Card>
   )
