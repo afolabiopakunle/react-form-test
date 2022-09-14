@@ -12,7 +12,7 @@ export default function AddUser() {
     <Card className={styles.input}>
     <form onSubmit={addUserHandler}>
       <label htmlFor="username">Username</label>
-      <input type="text" id='username' />
+      <input autoFocus={true} type="text" id='username' />
       <label htmlFor="age">Age (Years)</label>
       <input type="number" id="age"/>
       {/* <button type="submit">Add User</button> */}
